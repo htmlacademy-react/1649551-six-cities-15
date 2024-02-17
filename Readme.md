@@ -1,7 +1,7 @@
 # Личный проект «Шесть городов»
 
 * Студент: [Dmitrii Belov](https://up.htmlacademy.ru/react/15/user/1649551).
-* Наставник: `Неизвестно`.
+* Наставник: `Dmitrii Belov`.
 
 ---
 
