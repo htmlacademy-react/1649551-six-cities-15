@@ -1,5 +1,6 @@
 import { cities } from '../../consts/consts';
 import PlaceCard from '../../components/card/place-card';
+import { offers } from '../../mocks/cards/cards-mocks';
 
 type MainPage = {
   offersCount: number;
@@ -73,11 +74,17 @@ function MainPage({offersCount}: MainPage): JSX.Element {
                 </ul>
               </form>
               <div className="cities__places-list places__list tabs__content">
-                <PlaceCard />
-                <PlaceCard />
-                <PlaceCard />
-                <PlaceCard />
-                <PlaceCard />
+                {offers.map((card) => (
+                  <PlaceCard
+                    key = {card.id}
+                    previewImage = {card.previewImage}
+                    isPremium = {card.isPremium}
+                    price={card.price}
+                    title={card.title}
+                    type = {card.type}
+                    rating={card.rating}
+                  />
+                ))}
               </div>
             </section>
             <div className="cities__right-section">
