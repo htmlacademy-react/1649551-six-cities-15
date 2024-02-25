@@ -1,6 +1,5 @@
 import { cities } from '../../consts/consts';
-import PlaceCard from '../../components/card/place-card';
-import { offers } from '../../mocks/cards/cards-mocks';
+import CardsList from '../../components/cards-list/cards-list';
 
 type MainPage = {
   offersCount: number;
@@ -73,19 +72,7 @@ function MainPage({offersCount}: MainPage): JSX.Element {
                   <li className="places__option" tabIndex={0}>Top rated first</li>
                 </ul>
               </form>
-              <div className="cities__places-list places__list tabs__content">
-                {offers.map((card) => (
-                  <PlaceCard
-                    key = {card.id}
-                    previewImage = {card.previewImage}
-                    isPremium = {card.isPremium}
-                    price={card.price}
-                    title={card.title}
-                    type = {card.type}
-                    rating={card.rating}
-                  />
-                ))}
-              </div>
+              <CardsList />
             </section>
             <div className="cities__right-section">
               <section className="cities__map map"></section>
