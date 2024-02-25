@@ -4,12 +4,17 @@ function PlaceCard(offers: PlaceCardType): JSX.Element {
   const {isPremium, previewImage, price, rating, title, type} = offers;
   return(
     <article className="cities__card place-card">
-      <div className="place-card__mark">
-        <span>{isPremium ? 'Premium' : ''}</span>
-      </div>
+      {isPremium &&
+        <div className="place-card__mark">
+          <span>Premium</span>
+        </div>}
       <div className="cities__image-wrapper place-card__image-wrapper">
         <a href="#">
-          <img className="place-card__image" src={previewImage} width="260" height="200" alt="Place image" />
+          <img style={{width: '260px', height: '200px'}}
+            className="place-card__image"
+            src={previewImage}
+            alt="Place image"
+          />
         </a>
       </div>
       <div className="place-card__info">
