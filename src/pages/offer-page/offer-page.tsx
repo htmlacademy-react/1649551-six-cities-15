@@ -1,9 +1,13 @@
+import { Helmet } from 'react-helmet-async';
 import Header from '../../components/header/header';
 import InsideItemList from '../../components/inside-items/inside-item-list';
 
 function OfferPage(): JSX.Element {
   return(
     <div className="page">
+      <Helmet>
+        <title>Six Cities. Choose offer</title>
+      </Helmet>
       <Header />
 
       <main className="page__main page__main--offer">

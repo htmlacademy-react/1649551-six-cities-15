@@ -25,3 +25,19 @@ export const insideItems: string[] = [
   'Cabel TV',
   'Fridge'
 ];
+
+
+export enum AppRoute {
+  Main = '/',
+  Login = '/login',
+  Favorites = 'favorites',
+  Offer = '/offer',
+  NotFound = '*',
+  Room = '/offer/:id'
+}
+
+export enum AuthorizationStatus {
+  Auth = 'AUTH',
+  NoAuth = 'NOAUTH',
+  Unknown = 'UNKNOWN',
+}
