@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { PlaceCardType } from '../../types/types';
 
 function PlaceCard(offers: PlaceCardType): JSX.Element {
@@ -9,13 +10,13 @@ function PlaceCard(offers: PlaceCardType): JSX.Element {
           <span>Premium</span>
         </div>}
       <div className="cities__image-wrapper place-card__image-wrapper">
-        <a href="#">
+        <Link to="#">
           <img style={{width: '260px', height: '200px'}}
             className="place-card__image"
             src={previewImage}
             alt="Place image"
           />
-        </a>
+        </Link>
       </div>
       <div className="place-card__info">
         <div className="place-card__price-wrapper">
@@ -37,7 +38,7 @@ function PlaceCard(offers: PlaceCardType): JSX.Element {
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="#">{title}</a>
+          <Link to="#">{title}</Link>
         </h2>
         <p className="place-card__type">{type}</p>
       </div>
