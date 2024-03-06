@@ -2,6 +2,7 @@ import { cities } from '../../consts/consts';
 import CardsList from '../../components/cards-list/cards-list';
 import Header from '../../components/header/header';
 import Map from '../../components/map/map';
+import { Helmet } from 'react-helmet-async';
 
 type MainPage = {
   offersCount: number;
@@ -10,6 +11,9 @@ type MainPage = {
 function MainPage({offersCount}: MainPage): JSX.Element {
   return(
     <div className="page page--gray page--main">
+      <Helmet>
+        <title>Six Cities. Main page</title>
+      </Helmet>
       <Header />
       <main className="page__main page__main--index">
         <h1 className="visually-hidden">Cities</h1>

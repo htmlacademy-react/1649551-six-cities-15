@@ -1,9 +1,13 @@
 import { Link } from 'react-router-dom';
 import Header from '../../components/header/header';
+import { Helmet } from 'react-helmet-async';
 
 function FavoritesPage(): JSX.Element {
   return(
     <div className="page">
+      <Helmet>
+        <title>Six Cities. Favourites page</title>
+      </Helmet>
       <Header />
 
       <main className="page__main page__main--favorites">
