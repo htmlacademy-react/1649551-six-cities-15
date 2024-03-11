@@ -13,27 +13,12 @@ export const cities: CitiesType = [
   'Dusseldorf'
 ];
 
-export const insideItems: string[] = [
-  'Wi-Fi',
-  'Washing machine',
-  'Towels',
-  'Heating',
-  'Coffee machine',
-  'Baby seat',
-  'Kitchen',
-  'Dishwasher',
-  'Cabel TV',
-  'Fridge'
-];
-
-
 export enum AppRoute {
   Main = '/',
   Login = '/login',
   Favorites = 'favorites',
-  Offer = '/offer',
-  NotFound = '*',
-  Room = '/offer/:id'
+  Offer = '/offer/:id',
+  NotFound = '*'
 }
 
 export enum AuthorizationStatus {
@@ -41,3 +26,11 @@ export enum AuthorizationStatus {
   NoAuth = 'NOAUTH',
   Unknown = 'UNKNOWN',
 }
+
+export const raitings = [
+  { value: 5, title: 'perfect' },
+  { value: 4, title: 'good' },
+  { value: 3, title: 'not bad' },
+  { value: 2, title: 'badly' },
+  { value: 1, title: 'terribly' },
+];

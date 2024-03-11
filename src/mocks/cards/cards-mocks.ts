@@ -26,6 +26,8 @@ export const offers: OfferType[] = [
     'bedrooms': 3,
     'goods': [
       'Heating',
+      'Washing machine',
+      'Towels'
     ],
     'host': {
       'avatarUrl': 'img/1.png',
@@ -105,7 +107,8 @@ export const offers: OfferType[] = [
     'bedrooms': 8,
     'goods': [
       'Heating',
-      'TV'
+      'TV',
+      'Kitchen'
     ],
     'host': {
       'avatarUrl': 'img/1.png',
