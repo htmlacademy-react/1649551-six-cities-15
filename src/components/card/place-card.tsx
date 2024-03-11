@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import { PlaceCardType } from '../../types/types';
+import { OfferType } from '../../types/types';
 
-function PlaceCard(offers: PlaceCardType): JSX.Element {
+function PlaceCard(offers: OfferType): JSX.Element {
   const {isPremium, previewImage, price, rating, title, type} = offers;
   return(
     <article className="cities__card place-card">
