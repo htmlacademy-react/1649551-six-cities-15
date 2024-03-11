@@ -1,8 +1,26 @@
 import { Helmet } from 'react-helmet-async';
 import Header from '../../components/header/header';
 import InsideItemList from '../../components/inside-items/inside-item-list';
+import { OfferType } from '../../types/types';
+import { useParams } from 'react-router-dom';
+import { AuthorizationStatus } from '../../consts/consts';
+import NotFoundPage from '../not-found-page/not-found-page';
 
-function OfferPage(): JSX.Element {
+type OfferPageProps = {
+  offers: OfferType[];
+  authorizationStatus: AuthorizationStatus;
+}
+
+function OfferPage({offers, authorizationStatus}: OfferPageProps): JSX.Element {
+  const { id } = useParams();
+  const currentOffer: OfferType | undefined = offers.find((offer: OfferType) => offer.id === id);
+
+  if(!currentOffer) {
+    return (<NotFoundPage />);
+  }
+
+  const {title, price} = currentOffer;
+
   return(
     <div className="page">
       <Helmet>
@@ -41,7 +59,7 @@ function OfferPage(): JSX.Element {
               </div>
               <div className="offer__name-wrapper">
                 <h1 className="offer__name">
-                  Beautiful &amp; luxurious studio at great location
+                  {title}
                 </h1>
                 <button className="offer__bookmark-button button" type="button">
                   <svg className="offer__bookmark-icon" width="31" height="33">
@@ -69,7 +87,7 @@ function OfferPage(): JSX.Element {
                 </li>
               </ul>
               <div className="offer__price">
-                <b className="offer__price-value">&euro;120</b>
+                <b className="offer__price-value">&euro;{price}</b>
                 <span className="offer__price-text">&nbsp;night</span>
               </div>
               <div className="offer__inside">

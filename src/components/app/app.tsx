@@ -7,19 +7,21 @@ import FavoritesPage from '../../pages/favorites-page/favorites';
 import NotFoundPage from '../../pages/not-found-page/not-found-page';
 import PrivateRoute from '../private-route/pribate-route';
 import { HelmetProvider } from 'react-helmet-async';
+import { OfferType } from '../../types/types';
 
-type AppScreenProps = {
-  offersCount: number;
+export type AppScreenProps = {
+  offers: OfferType[];
+  authorizationStatus: AuthorizationStatus;
 }
 
-function App({offersCount}: AppScreenProps): JSX.Element {
+function App({offers, authorizationStatus}: AppScreenProps): JSX.Element {
   return(
     <HelmetProvider>
       <BrowserRouter>
         <Routes>
           <Route
             path={AppRoute.Main}
-            element={<MainPage offersCount= {offersCount}/>}
+            element={<MainPage offers={offers}/>}
           />
           <Route
             path={AppRoute.Login}
@@ -27,12 +29,12 @@ function App({offersCount}: AppScreenProps): JSX.Element {
           />
           <Route
             path={AppRoute.Offer}
-            element={<OfferPage />}
+            element={<OfferPage offers={offers} authorizationStatus={authorizationStatus} />}
           />
           <Route
             path={AppRoute.Favorites}
             element={
-              <PrivateRoute authorizationStatus={AuthorizationStatus.NoAuth}>
+              <PrivateRoute authorizationStatus={authorizationStatus}>
                 <FavoritesPage />
               </PrivateRoute>
             }

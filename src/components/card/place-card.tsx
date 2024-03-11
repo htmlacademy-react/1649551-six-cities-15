@@ -1,8 +1,12 @@
 import { Link } from 'react-router-dom';
 import { OfferType } from '../../types/types';
 
-function PlaceCard(offers: OfferType): JSX.Element {
-  const {isPremium, previewImage, price, rating, title, type} = offers;
+type PlaceCardProps = {
+  offer: OfferType;
+}
+
+function PlaceCard({offer}: PlaceCardProps): JSX.Element {
+  const {isPremium, previewImage, price, rating, title, type} = offer;
   return(
     <article className="cities__card place-card">
       {isPremium &&
