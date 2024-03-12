@@ -7,6 +7,7 @@ import { AuthorizationStatus } from '../../consts/consts';
 import NotFoundPage from '../not-found-page/not-found-page';
 import ReviewsComponent from '../../components/reviews/reviews-component';
 import NearPlaceList from '../../components/near-places/near-place-list';
+import CurrentOfferImagesList from '../../components/current-offer-gallery/current-offer-images-list';
 
 type OfferPageProps = {
   offers: OfferType[];
@@ -21,7 +22,7 @@ function OfferPage({offers, authorizationStatus}: OfferPageProps): JSX.Element {
     return (<NotFoundPage />);
   }
 
-  const {title, price, isPremium, rating, type, bedrooms, maxAdults, goods} = currentOffer;
+  const {title, price, isPremium, rating, type, bedrooms, maxAdults, goods, images} = currentOffer;
 
   return(
     <div className="page">
@@ -33,26 +34,7 @@ function OfferPage({offers, authorizationStatus}: OfferPageProps): JSX.Element {
       <main className="page__main page__main--offer">
         <section className="offer">
           <div className="offer__gallery-container container">
-            <div className="offer__gallery">
-              <div className="offer__image-wrapper">
-                <img className="offer__image" src="img/room.jpg" alt="Photo studio" />
-              </div>
-              <div className="offer__image-wrapper">
-                <img className="offer__image" src="img/apartment-01.jpg" alt="Photo studio" />
-              </div>
-              <div className="offer__image-wrapper">
-                <img className="offer__image" src="img/apartment-02.jpg" alt="Photo studio" />
-              </div>
-              <div className="offer__image-wrapper">
-                <img className="offer__image" src="img/apartment-03.jpg" alt="Photo studio" />
-              </div>
-              <div className="offer__image-wrapper">
-                <img className="offer__image" src="img/studio-01.jpg" alt="Photo studio" />
-              </div>
-              <div className="offer__image-wrapper">
-                <img className="offer__image" src="img/apartment-01.jpg" alt="Photo studio" />
-              </div>
-            </div>
+            <CurrentOfferImagesList images={images} />
           </div>
           <div className="offer__container container">
             <div className="offer__wrapper">

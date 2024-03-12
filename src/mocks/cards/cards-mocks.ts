@@ -37,7 +37,8 @@ export const offers: OfferType[] = [
     'previewImage': 'https://www.pufikhomes.com/wp-content/uploads/2016/10/kvartira-s-vidom-na-kanal-v-amsterdame-6.jpg',
     'images': [
       'https://www.pufikhomes.com/wp-content/uploads/2016/10/kvartira-s-vidom-na-kanal-v-amsterdame-6.jpg',
-      'https://www.pufikhomes.com/wp-content/uploads/2016/10/kvartira-s-vidom-na-kanal-v-amsterdame-6.jpg',
+      'https://pro-dachnikov.com/uploads/posts/2023-01/1672807665_pro-dachnikov-com-p-spalnya-v-gostinitse-foto-9.jpg',
+      'https://u.9111s.ru/uploads/202110/06/2b8dd41527897246c4a7197fde83de2b.jpg'
     ],
     'maxAdults': 4,
   },
@@ -77,8 +78,8 @@ export const offers: OfferType[] = [
     'previewImage': 'img/apartment-01.jpg',
     'images': [
       'img/apartment-01.jpg',
-      'img/apartment-01.jpg',
-      'img/apartment-01.jpg',
+      'https://design-homes.ru/images/galery/2002/pereplanirovka-khrushchevki_5e0a16433bcf3.jpg',
+      'https://design-homes.ru/images/galery/2002/pereplanirovka-khrushchevki_5e0a517a6a89b.jpg',
     ],
     'maxAdults': 2,
   },
@@ -118,8 +119,10 @@ export const offers: OfferType[] = [
     'previewImage': 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/123309934.jpg?k=443efb73a915424bcbe9eab440b304287a14053fd845de4585eb4b4b047de064&o=&hp=1',
     'images': [
       'https://cf.bstatic.com/xdata/images/hotel/max1024x768/123309934.jpg?k=443efb73a915424bcbe9eab440b304287a14053fd845de4585eb4b4b047de064&o=&hp=1',
-      'https://cf.bstatic.com/xdata/images/hotel/max1024x768/123309934.jpg?k=443efb73a915424bcbe9eab440b304287a14053fd845de4585eb4b4b047de064&o=&hp=1',
-      'https://cf.bstatic.com/xdata/images/hotel/max1024x768/123309934.jpg?k=443efb73a915424bcbe9eab440b304287a14053fd845de4585eb4b4b047de064&o=&hp=1',
+      'https://static.insales-cdn.com/images/articles/1/3733/1650325/profilakticheskaya-dezinfekciya-v-otelyah.jpg',
+      'http://universal-tours.ru/wp-content/uploads/2015/05/0-Grand-Hotel-Tremezzo.jpg',
+      'https://hotels.sletat.ru/i/f/21536_0.jpg',
+      'https://wp-s.ru/wallpapers/1/66/318595478051670/romantichnoe-kafe-na-vode.jpg'
     ],
     'maxAdults': 5
   },
@@ -158,8 +161,8 @@ export const offers: OfferType[] = [
     'previewImage': 'img/apartment-02.jpg',
     'images': [
       'img/apartment-02.jpg',
-      'img/apartment-02.jpg',
-      'img/apartment-02.jpg',
+      'https://pro-dachnikov.com/uploads/posts/2023-01/1673669822_pro-dachnikov-com-p-foto-rasstanovka-mebeli-v-khrushchevke-2-k-38.jpg',
+      'https://webpulse.imgsmail.ru/imgpreview?key=pulse_cabinet-image-45c92983-1bbb-4070-93cf-6118180791bf&mb=webpulse',
     ],
     'maxAdults': 1
   },
@@ -199,9 +202,9 @@ export const offers: OfferType[] = [
     'previewImage':  'img/apartment-03.jpg',
     'images': [
       'img/apartment-03.jpg',
-      'img/apartment-03.jpg',
-      'img/apartment-03.jpg',
-      'img/apartment-03.jpg'
+      'https://u-f.ru/sites/default/files/disain_0.jpg',
+      'https://mk-ek.ru/wp-content/uploads/0/e/6/0e6796c7c450dfd3a6dde4498c8ba388.jpeg',
+      'https://vann-good.ru/wp-content/uploads/8/5/5/855e9754786726920debfaf0f38cd8f6.jpeg'
     ],
     'maxAdults': 2
   },
@@ -242,8 +245,9 @@ export const offers: OfferType[] = [
     'previewImage': 'https://kvartblog.ru/uploads/post_photo/3007/3502/5624098_original.jpg',
     'images': [
       'https://kvartblog.ru/uploads/post_photo/3007/3502/5624098_original.jpg',
-      'https://kvartblog.ru/uploads/post_photo/3007/3502/5624098_original.jpg',
-      'https://kvartblog.ru/uploads/post_photo/3007/3502/5624098_original.jpg'
+      'https://www.st-montaj.ru/wp-content/uploads/2022/05/dizajn-kvartiry-v-stile-minimalizm-foto-osobennosti-proektov-9263ea7.jpg',
+      'https://u-f.ru/sites/default/files/3_669.jpg',
+      'https://design-homes.ru/images/galery/1796/dvukhurovnevye-kvartiry_5d3de884c5a73.jpg'
     ],
     'maxAdults': 1
   },
