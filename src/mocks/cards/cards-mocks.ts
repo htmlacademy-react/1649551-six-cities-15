@@ -60,7 +60,7 @@ export const offers: OfferType[] = [
       'longitude': 19.051408,
       'zoom': 10,
     },
-    'isFavorite': false,
+    'isFavorite': true,
     'isPremium': true,
     'rating': 4.4,
     'description': 'This five-star hotel with friendly staff who speaks several languages, including Russian and English.',

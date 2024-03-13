@@ -4,12 +4,21 @@ import Header from '../../components/header/header';
 import Map from '../../components/map/map';
 import { Helmet } from 'react-helmet-async';
 import { OfferType } from '../../types/types';
+import { useState } from 'react';
+import { Nullable } from 'vitest';
 
 type MainPage = {
  offers: OfferType[];
 }
 
 function MainPage({offers}: MainPage): JSX.Element {
+
+  const [, setActiveOffer] = useState<Nullable<OfferType>>(null);
+
+  const handleHover = (offer?: OfferType) => {
+    setActiveOffer(offer || null);
+  };
+
   return(
     <div className="page page--gray page--main">
       <Helmet>
@@ -51,7 +60,10 @@ function MainPage({offers}: MainPage): JSX.Element {
                   <li className="places__option" tabIndex={0}>Top rated first</li>
                 </ul>
               </form>
-              <CardsList offers={offers}/>
+              <CardsList
+                offers={offers}
+                handleHover={handleHover}
+              />
             </section>
             <div className="cities__right-section">
               <Map />
