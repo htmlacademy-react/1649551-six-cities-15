@@ -41,7 +41,7 @@ function App({offers, authorizationStatus}: AppScreenProps): JSX.Element {
           />
           <Route
             path={AppRoute.NotFound}
-            element={<NotFoundPage />}
+            element={<NotFoundPage type='page'/>}
           />
         </Routes>
       </BrowserRouter>

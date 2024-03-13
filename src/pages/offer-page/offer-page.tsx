@@ -19,7 +19,7 @@ function OfferPage({offers, authorizationStatus}: OfferPageProps): JSX.Element {
   const currentOffer: OfferType | undefined = offers.find((offer: OfferType) => offer.id === id);
 
   if(!currentOffer) {
-    return (<NotFoundPage />);
+    return (<NotFoundPage type='offer'/>);
   }
 
   const {title, price, isPremium, rating, type, bedrooms, maxAdults, goods, images} = currentOffer;
