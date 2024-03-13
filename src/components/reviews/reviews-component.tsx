@@ -1,14 +1,12 @@
-import { AuthorizationStatus } from '../../consts/consts';
 import ReviewsListComponent from './reviews-list-component';
 import ReviewsFormComponent from './reviews-form-component';
 
 type ReviewsComponentProps = {
-  authorizationStatus: AuthorizationStatus;
+  isAuth: boolean;
 }
 
-function ReviewsComponent({authorizationStatus}: ReviewsComponentProps): JSX.Element {
+function ReviewsComponent({isAuth}: ReviewsComponentProps): JSX.Element {
 
-  const isAuth = authorizationStatus === AuthorizationStatus.Auth;
   return(
     <section>
       <ReviewsListComponent />

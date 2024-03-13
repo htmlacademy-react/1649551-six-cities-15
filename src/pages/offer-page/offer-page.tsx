@@ -103,7 +103,12 @@ function OfferPage({offers, authorizationStatus}: OfferPageProps): JSX.Element {
                   </p>
                 </div>
               </div>
-              <ReviewsComponent authorizationStatus={authorizationStatus}/>
+              <section className="offer__reviews reviews">
+                <h2 className="reviews__title">Reviews &middot;
+                  <span className="reviews__amount">1</span>
+                </h2>
+                <ReviewsComponent isAuth={authorizationStatus === AuthorizationStatus.Auth}/>
+              </section>
             </div>
           </div>
           <section className="offer__map map"></section>
