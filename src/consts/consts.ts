@@ -35,3 +35,7 @@ export const raitings = [
   { value: 2, title: 'badly' },
   { value: 1, title: 'terribly' },
 ];
+
+export const URL_MARKER_DEFAULT = './icons/marker-default.svg';
+
+export const URL_MARKER_ACTIVE = './icons/marker-active.svg';

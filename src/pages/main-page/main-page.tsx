@@ -13,7 +13,7 @@ type MainPage = {
 
 function MainPage({offers}: MainPage): JSX.Element {
 
-  const [, setActiveOffer] = useState<Nullable<OfferType>>(null);
+  const [activeOffer, setActiveOffer] = useState<Nullable<OfferType>>(null);
 
   const handleHover = (offer?: OfferType) => {
     setActiveOffer(offer || null);
@@ -44,7 +44,7 @@ function MainPage({offers}: MainPage): JSX.Element {
           <div className="cities__places-container container">
             <section className="cities__places places">
               <h2 className="visually-hidden">Places</h2>
-              <b className="places__found">{offers.length} places to stay in Amsterdam</b>
+              <b className="places__found">{offers.length} places to stay in {offers[2].city.name}</b>
               <form className="places__sorting" action="#" method="get">
                 <span className="places__sorting-caption">Sort by</span>
                 <span className="places__sorting-type" tabIndex={0}>
@@ -66,7 +66,12 @@ function MainPage({offers}: MainPage): JSX.Element {
               />
             </section>
             <div className="cities__right-section">
-              <Map />
+              <Map
+                activeOffer={activeOffer}
+                city={offers[0].city}
+                offers={offers}
+                className='cities__map'
+              />
             </div>
           </div>
         </div>
