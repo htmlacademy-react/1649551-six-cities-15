@@ -6,7 +6,7 @@ type CardListProps = {
   handleHover: (offer?: OfferType) => void;
 }
 
-function CardsList({offers,handleHover}: CardListProps): JSX.Element {
+function CardsList({ offers, handleHover }: CardListProps): JSX.Element {
 
   return(
     <div className="cities__places-list places__list tabs__content">

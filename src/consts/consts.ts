@@ -1,16 +1,32 @@
-import { CitiesType } from '../types/types';
-
 export const Settings = {
   OffersCount: 10
 };
 
-export const cities: CitiesType = [
-  'Paris',
-  'Cologne',
-  'Brussels',
-  'Amsterdam',
-  'Hamburg',
-  'Dusseldorf'
+export const CITIES = [
+  {
+    name: 'Paris',
+    isActive: false
+  },
+  {
+    name: 'Cologne',
+    isActive: false
+  },
+  {
+    name: 'Brussels',
+    isActive: false
+  },
+  {
+    name: 'Amsterdam',
+    isActive: true
+  },
+  {
+    name: 'Hamburg',
+    isActive: false
+  },
+  {
+    name: 'Dusseldorf',
+    isActive: false
+  },
 ];
 
 export enum AppRoute {
@@ -35,3 +51,7 @@ export const raitings = [
   { value: 2, title: 'badly' },
   { value: 1, title: 'terribly' },
 ];
+
+export const URL_MARKER_DEFAULT = './icons/marker-default.svg';
+
+export const URL_MARKER_ACTIVE = './icons/marker-active.svg';

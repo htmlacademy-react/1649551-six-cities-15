@@ -15,8 +15,131 @@ export const offers: OfferType[] = [
       'name': 'Amsterdam',
     },
     'location': {
-      'latitude': 52.370216,
-      'longitude': 4.895168,
+      'latitude': 52.3909553943508,
+      'longitude': 4.85309666406198,
+      'zoom': 8
+    },
+    'isFavorite': true,
+    'isPremium': false,
+    'rating': 4.8,
+    'description': 'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    'bedrooms': 3,
+    'goods': [
+      'Heating',
+      'Washing machine',
+      'Towels'
+    ],
+    'host': {
+      'avatarUrl': 'img/1.png',
+      'isPro': true,
+      'name': 'Angelina',
+    },
+    'previewImage': 'https://www.pufikhomes.com/wp-content/uploads/2016/10/kvartira-s-vidom-na-kanal-v-amsterdame-6.jpg',
+    'images': [
+      'https://www.pufikhomes.com/wp-content/uploads/2016/10/kvartira-s-vidom-na-kanal-v-amsterdame-6.jpg',
+      'https://pro-dachnikov.com/uploads/posts/2023-01/1672807665_pro-dachnikov-com-p-spalnya-v-gostinitse-foto-9.jpg',
+      'https://u.9111s.ru/uploads/202110/06/2b8dd41527897246c4a7197fde83de2b.jpg'
+    ],
+    'maxAdults': 4,
+  },
+  {
+    'id': '7',
+    'title': 'Beautiful & luxurious studio at great locatihdskhdskjon',
+    'type': 'apartment',
+    'price': 120,
+    'city': {
+      'location': {
+        'latitude': 52.370216,
+        'longitude': 4.895168,
+        'zoom': 8
+      },
+      'name': 'Amsterdam',
+    },
+    'location': {
+      'latitude': 52.3609553943508,
+      'longitude': 4.85309666406198,
+      'zoom': 8
+    },
+    'isFavorite': true,
+    'isPremium': false,
+    'rating': 4.8,
+    'description': 'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    'bedrooms': 3,
+    'goods': [
+      'Heating',
+      'Washing machine',
+      'Towels'
+    ],
+    'host': {
+      'avatarUrl': 'img/1.png',
+      'isPro': true,
+      'name': 'Angelina',
+    },
+    'previewImage': 'https://www.pufikhomes.com/wp-content/uploads/2016/10/kvartira-s-vidom-na-kanal-v-amsterdame-6.jpg',
+    'images': [
+      'https://www.pufikhomes.com/wp-content/uploads/2016/10/kvartira-s-vidom-na-kanal-v-amsterdame-6.jpg',
+      'https://pro-dachnikov.com/uploads/posts/2023-01/1672807665_pro-dachnikov-com-p-spalnya-v-gostinitse-foto-9.jpg',
+      'https://u.9111s.ru/uploads/202110/06/2b8dd41527897246c4a7197fde83de2b.jpg'
+    ],
+    'maxAdults': 4,
+  },
+  {
+    'id': '8',
+    'title': 'Beautiful & luxurious studio at great locatihdskhdskjon',
+    'type': 'apartment',
+    'price': 120,
+    'city': {
+      'location': {
+        'latitude': 52.370216,
+        'longitude': 4.895168,
+        'zoom': 8
+      },
+      'name': 'Amsterdam',
+    },
+    'location': {
+      'latitude': 52.3909553943508,
+      'longitude': 4.929309666406198,
+      'zoom': 8
+    },
+    'isFavorite': true,
+    'isPremium': false,
+    'rating': 4.8,
+    'description': 'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    'bedrooms': 3,
+    'goods': [
+      'Heating',
+      'Washing machine',
+      'Towels'
+    ],
+    'host': {
+      'avatarUrl': 'img/1.png',
+      'isPro': true,
+      'name': 'Angelina',
+    },
+    'previewImage': 'https://www.pufikhomes.com/wp-content/uploads/2016/10/kvartira-s-vidom-na-kanal-v-amsterdame-6.jpg',
+    'images': [
+      'https://www.pufikhomes.com/wp-content/uploads/2016/10/kvartira-s-vidom-na-kanal-v-amsterdame-6.jpg',
+      'https://pro-dachnikov.com/uploads/posts/2023-01/1672807665_pro-dachnikov-com-p-spalnya-v-gostinitse-foto-9.jpg',
+      'https://u.9111s.ru/uploads/202110/06/2b8dd41527897246c4a7197fde83de2b.jpg'
+    ],
+    'maxAdults': 4,
+  },
+  {
+    'id': '9',
+    'title': 'Beautiful & luxurious studio at great locatihdskhdskjon',
+    'type': 'apartment',
+    'price': 120,
+    'city': {
+      'location': {
+        'latitude': 52.370216,
+        'longitude': 4.895168,
+        'zoom': 8
+      },
+      'name': 'Amsterdam',
+    },
+    'location': {
+      'latitude': 52.3809553943508,
+      'longitude': 4.939309666406198,
       'zoom': 8
     },
     'isFavorite': true,
