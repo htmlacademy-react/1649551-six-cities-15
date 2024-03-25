@@ -53,6 +53,7 @@ function MainPage({offers}: MainPage): JSX.Element {
               <CardsList
                 offers={offers}
                 handleHover={handleHover}
+                block='cities'
               />
             </section>
             <div className="cities__right-section">
