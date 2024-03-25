@@ -1,4 +1,7 @@
-export type CitiesType = string[];
+export type CitiesType = {
+  name: string;
+  isActive: boolean;
+};
 
 export type LocationCoordinates = {
   latitude: number;

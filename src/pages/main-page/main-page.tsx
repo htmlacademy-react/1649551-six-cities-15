@@ -1,4 +1,3 @@
-import { cities } from '../../consts/consts';
 import CardsList from '../../components/cards-list/cards-list';
 import Header from '../../components/header/header';
 import Map from '../../components/map/map';
@@ -6,6 +5,7 @@ import { Helmet } from 'react-helmet-async';
 import { OfferType } from '../../types/types';
 import { useState } from 'react';
 import { Nullable } from 'vitest';
+import CitiesList from '../../components/cities-list/cities-list';
 
 type MainPage = {
  offers: OfferType[];
@@ -28,17 +28,7 @@ function MainPage({offers}: MainPage): JSX.Element {
       <main className="page__main page__main--index">
         <h1 className="visually-hidden">Cities</h1>
         <div className="tabs">
-          <section className="locations container">
-            <ul className="locations__list tabs__list">
-              {cities.map((city) => (
-                <li className="locations__item" key={city}>
-                  <a className="locations__item-link tabs__item" href="#">
-                    <span>{city}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </section>
+          <CitiesList />
         </div>
         <div className="cities">
           <div className="cities__places-container container">

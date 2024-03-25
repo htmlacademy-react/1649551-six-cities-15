@@ -1,4 +1,4 @@
-import leaflet from 'leaflet';
+import leaflet, { LayerGroup } from 'leaflet';
 import { CityType, OfferType } from '../../types/types';
 import { useEffect, useRef } from 'react';
 import { useMap } from '../../hooks/use-map';
@@ -27,6 +27,15 @@ const defaultMarkerIcon = leaflet.icon({
 function Map({city, offers, activeOffer, className }: MapProps): JSX.Element {
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const map = useMap({ location: city.location, containerRef: mapContainerRef });
+  const markerLayer = useRef<LayerGroup>(leaflet.layerGroup());
+
+  useEffect(():void => {
+    if(map) {
+      map.setView([city.location.latitude, city.location.longitude], city.location.zoom);
+      markerLayer.current.addTo(map);
+      markerLayer.current.clearLayers();
+    }
+  },[city,map]);
 
   useEffect((): void => {
     if(map){
@@ -38,7 +47,7 @@ function Map({city, offers, activeOffer, className }: MapProps): JSX.Element {
           }, {
             icon: offer.id === activeOffer?.id ? activeMarkerIcon : defaultMarkerIcon,
           })
-          .addTo(map);
+          .addTo(markerLayer.current);
       });
     }
   },[activeOffer, map, offers]);
