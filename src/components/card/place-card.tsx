@@ -5,9 +5,10 @@ import { AppRoute } from '../../consts/consts';
 type PlaceCardProps = {
   offer: OfferType;
   handleHover: (offer?: OfferType) => void;
+  block?: string;
 }
 
-function PlaceCard({offer, handleHover}: PlaceCardProps): JSX.Element {
+function PlaceCard({offer, handleHover,block}: PlaceCardProps): JSX.Element {
   const {isPremium, previewImage, price, rating, title, type} = offer;
 
   const handleMouseOn = () => {
@@ -21,7 +22,7 @@ function PlaceCard({offer, handleHover}: PlaceCardProps): JSX.Element {
   return(
     <Link to={`${AppRoute.Offer}/${offer.id}`}>
       <article
-        className="cities__card place-card"
+        className={`${block}__card place-card`}
         onMouseEnter={handleMouseOn}
         onMouseLeave={handleMouseOff}
       >

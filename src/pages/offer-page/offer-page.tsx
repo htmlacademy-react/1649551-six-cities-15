@@ -4,10 +4,11 @@ import InsideItemList from '../../components/inside-items/inside-item-list';
 import { OfferType } from '../../types/types';
 import { useParams } from 'react-router-dom';
 import { AuthorizationStatus } from '../../consts/consts';
+import Map from '../../components/map/map';
 import NotFoundPage from '../not-found-page/not-found-page';
 import ReviewsComponent from '../../components/reviews/reviews-component';
-import NearPlaceList from '../../components/near-places/near-place-list';
 import CurrentOfferImagesList from '../../components/current-offer-gallery/current-offer-images-list';
+import CardsList from '../../components/cards-list/cards-list';
 
 type OfferPageProps = {
   offers: OfferType[];
@@ -15,8 +16,14 @@ type OfferPageProps = {
 }
 
 function OfferPage({offers, authorizationStatus}: OfferPageProps): JSX.Element {
-  const { id } = useParams();
-  const currentOffer: OfferType | undefined = offers.find((offer: OfferType) => offer.id === id);
+  const { offerId } = useParams();
+  const currentOffer = offers.find((item) => item.id === offerId);
+
+  if(!currentOffer){
+    return <NotFoundPage type='offer'/>;
+  }
+
+  const nearOffers = offers.slice(0,3);
 
   if(!currentOffer) {
     return (<NotFoundPage type='offer'/>);
@@ -111,12 +118,23 @@ function OfferPage({offers, authorizationStatus}: OfferPageProps): JSX.Element {
               </section>
             </div>
           </div>
-          <section className="offer__map map"></section>
+          <Map
+            className='offer__map'
+            offers={nearOffers}
+            city={currentOffer.city}
+            activeOffer={currentOffer}
+          />
         </section>
         <div className="container">
           <section className="near-places places">
             <h2 className="near-places__title">Other places in the neighbourhood</h2>
-            <NearPlaceList offers={offers.slice(0,3)}/>
+            <div className="near-places__list places__list">
+              <CardsList
+                offers={nearOffers}
+                block='near-places'
+                handleHover={()=> {}}
+              />
+            </div>
           </section>
         </div>
       </main>
