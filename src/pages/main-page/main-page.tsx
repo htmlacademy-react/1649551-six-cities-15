@@ -5,13 +5,24 @@ import { Helmet } from 'react-helmet-async';
 import { OfferType } from '../../types/types';
 import { useState } from 'react';
 import { Nullable } from 'vitest';
-import CitiesList from '../../components/cities-list/cities-list';
+import { useAppDispatch, useAppSelector } from '../../hooks/store';
+import classNames from 'classnames';
+import { Link } from 'react-router-dom';
+import { setCity } from '../../store/reducer';
+import { CITIES } from '../../consts/consts';
 
 type MainPage = {
  offers: OfferType[];
 }
 
-function MainPage({offers}: MainPage): JSX.Element {
+function MainPage(): JSX.Element {
+
+  const offers = useAppSelector((state) => state.offers);
+  const currentCity = useAppSelector((state) => state.city);
+  const currentOffers = offers.filter((offer) => offer.city.name === currentCity);
+  const isEmpty = currentOffers.length === 0;
+
+  const dispatch = useAppDispatch();
 
   const [activeOffer, setActiveOffer] = useState<Nullable<OfferType>>(null);
 
@@ -25,10 +36,27 @@ function MainPage({offers}: MainPage): JSX.Element {
         <title>Six Cities. Main page</title>
       </Helmet>
       <Header />
-      <main className="page__main page__main--index">
+      <main className={classNames('page__main', 'page__main--index', { 'page__main--index-empty': isEmpty })}>
         <h1 className="visually-hidden">Cities</h1>
         <div className="tabs">
-          <CitiesList />
+          <section className="locations container">
+            <ul className="locations__list tabs__list">
+              {CITIES.map((city) => (
+                <li className="locations__item" key={city.name}>
+                  <Link
+                    to={'/'}
+                    className={classNames('locations__item-link', 'tabs__item',{'tabs__item--active': currentCity === city.name })}
+                    onClick={(evt) => {
+                      evt.preventDefault();
+                      dispatch(setCity(city.name));
+                    }}
+                  >
+                    <span>{city.name}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
         </div>
         <div className="cities">
           <div className="cities__places-container container">

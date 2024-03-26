@@ -1,5 +1,5 @@
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
-import { AppRoute, AuthorizationStatus } from '../../consts/consts';
+import { AppRoute} from '../../consts/consts';
 import MainPage from '../../pages/main-page/main-page';
 import LoginPage from '../../pages/login-page/login-page';
 import OfferPage from '../../pages/offer-page/offer-page';
@@ -7,21 +7,16 @@ import FavoritesPage from '../../pages/favorites-page/favorites';
 import NotFoundPage from '../../pages/not-found-page/not-found-page';
 import PrivateRoute from '../private-route/pribate-route';
 import { HelmetProvider } from 'react-helmet-async';
-import { OfferType } from '../../types/types';
 
-export type AppScreenProps = {
-  offers: OfferType[];
-  authorizationStatus: AuthorizationStatus;
-}
 
-function App({offers, authorizationStatus}: AppScreenProps): JSX.Element {
+function App(): JSX.Element {
   return(
     <HelmetProvider>
       <BrowserRouter>
         <Routes>
           <Route
             path={AppRoute.Main}
-            element={<MainPage offers={offers}/>}
+            element={<MainPage />}
           />
           <Route
             path={AppRoute.Login}
