@@ -5,13 +5,21 @@ import { Helmet } from 'react-helmet-async';
 import { OfferType } from '../../types/types';
 import { useState } from 'react';
 import { Nullable } from 'vitest';
-import CitiesList from '../../components/cities-list/cities-list';
+import { useAppDispatch, useAppSelector } from '../../hooks/store';
+import classNames from 'classnames';
+import { Link } from 'react-router-dom';
+import { offersActions } from '../../store/slices/offers';
+import { CITIES } from '../../consts/consts';
+import { selectCity, selectOffers } from '../../store/selectors/offers';
 
-type MainPage = {
- offers: OfferType[];
-}
+function MainPage(): JSX.Element {
 
-function MainPage({offers}: MainPage): JSX.Element {
+  const offers = useAppSelector(selectOffers);
+  const currentCity = useAppSelector(selectCity);
+  const currentOffers = offers.filter((offer) => offer.city.name === currentCity);
+  const isEmpty = currentOffers.length === 0;
+
+  const dispatch = useAppDispatch();
 
   const [activeOffer, setActiveOffer] = useState<Nullable<OfferType>>(null);
 
@@ -25,10 +33,27 @@ function MainPage({offers}: MainPage): JSX.Element {
         <title>Six Cities. Main page</title>
       </Helmet>
       <Header />
-      <main className="page__main page__main--index">
+      <main className={classNames('page__main', 'page__main--index', { 'page__main--index-empty': isEmpty })}>
         <h1 className="visually-hidden">Cities</h1>
         <div className="tabs">
-          <CitiesList />
+          <section className="locations container">
+            <ul className="locations__list tabs__list">
+              {CITIES.map((city) => (
+                <li className="locations__item" key={city.name}>
+                  <Link
+                    to={'/'}
+                    className={classNames('locations__item-link', 'tabs__item',{'tabs__item--active': currentCity === city.name })}
+                    onClick={(evt) => {
+                      evt.preventDefault();
+                      dispatch(offersActions.setCity(city.name));
+                    }}
+                  >
+                    <span>{city.name}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
         </div>
         <div className="cities">
           <div className="cities__places-container container">
@@ -51,7 +76,7 @@ function MainPage({offers}: MainPage): JSX.Element {
                 </ul>
               </form>
               <CardsList
-                offers={offers}
+                offers={currentOffers}
                 handleHover={handleHover}
                 block='cities'
               />
@@ -59,8 +84,8 @@ function MainPage({offers}: MainPage): JSX.Element {
             <div className="cities__right-section">
               <Map
                 activeOffer={activeOffer}
-                city={offers[0].city}
-                offers={offers}
+                city={currentOffers[0].city}
+                offers={currentOffers}
                 className='cities__map'
               />
             </div>

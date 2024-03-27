@@ -12,7 +12,14 @@ function CitiesItem({cities, activeClass = 'tabs__item--active'}:CitiesItemProps
 
   return(
     <li className="locations__item" >
-      <Link to={'/'} className={`locations__item-link tabs__item ${isActive ? activeClass : ''}`}>
+      <Link
+        to={'/'}
+        className={`locations__item-link tabs__item ${isActive ? activeClass : ''}`}
+        onClick={(evt) => {
+          evt.preventDefault();
+          dispatch(setCity(city.name));
+        }}
+      >
         <span>{name}</span>
       </Link>
     </li>

@@ -1,14 +1,9 @@
 import { Link } from 'react-router-dom';
 import Header from '../../components/header/header';
 import { Helmet } from 'react-helmet-async';
-import { OfferType } from '../../types/types';
 import FavoritesList from '../../components/favorites-offers/favorites-list';
 
-type FavoritesPageProps = {
-  offers: OfferType[];
-}
-
-function FavoritesPage({offers}: FavoritesPageProps): JSX.Element {
+function FavoritesPage(): JSX.Element {
   return(
     <div className="page">
       <Helmet>
@@ -19,7 +14,7 @@ function FavoritesPage({offers}: FavoritesPageProps): JSX.Element {
       <main className="page__main page__main--favorites">
         <div className="page__favorites-container container">
           <section className="favorites">
-            <FavoritesList offers={offers} />
+            <FavoritesList />
           </section>
         </div>
       </main>
