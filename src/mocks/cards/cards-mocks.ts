@@ -10,14 +10,14 @@ export const offers: OfferType[] = [
       'location': {
         'latitude': 52.370216,
         'longitude': 4.895168,
-        'zoom': 8
+        'zoom': 12
       },
       'name': 'Amsterdam',
     },
     'location': {
       'latitude': 52.3909553943508,
       'longitude': 4.85309666406198,
-      'zoom': 8
+      'zoom': 12
     },
     'isFavorite': true,
     'isPremium': false,
@@ -51,14 +51,14 @@ export const offers: OfferType[] = [
       'location': {
         'latitude': 52.370216,
         'longitude': 4.895168,
-        'zoom': 8
+        'zoom': 12
       },
       'name': 'Amsterdam',
     },
     'location': {
       'latitude': 52.3609553943508,
       'longitude': 4.85309666406198,
-      'zoom': 8
+      'zoom': 12
     },
     'isFavorite': true,
     'isPremium': false,
@@ -92,14 +92,14 @@ export const offers: OfferType[] = [
       'location': {
         'latitude': 52.370216,
         'longitude': 4.895168,
-        'zoom': 8
+        'zoom': 12
       },
       'name': 'Amsterdam',
     },
     'location': {
       'latitude': 52.3909553943508,
       'longitude': 4.929309666406198,
-      'zoom': 8
+      'zoom': 12
     },
     'isFavorite': true,
     'isPremium': false,
@@ -133,14 +133,14 @@ export const offers: OfferType[] = [
       'location': {
         'latitude': 52.370216,
         'longitude': 4.895168,
-        'zoom': 8
+        'zoom': 12
       },
       'name': 'Amsterdam',
     },
     'location': {
       'latitude': 52.3809553943508,
       'longitude': 4.939309666406198,
-      'zoom': 8
+      'zoom': 12
     },
     'isFavorite': true,
     'isPremium': false,
@@ -174,14 +174,14 @@ export const offers: OfferType[] = [
       'location': {
         'latitude': 47.492653,
         'longitude': 19.051408,
-        'zoom': 10,
+        'zoom': 12,
       },
       'name': 'Budapesht',
     },
     'location': {
       'latitude': 47.492653,
       'longitude': 19.051408,
-      'zoom': 10,
+      'zoom': 12,
     },
     'isFavorite': true,
     'isPremium': true,
@@ -215,14 +215,14 @@ export const offers: OfferType[] = [
       'location': {
         'latitude': 48.856663,
         'longitude': 2.351556,
-        'zoom': 10,
+        'zoom': 12,
       },
       'name': 'Paris',
     },
     'location': {
-      'latitude': 48.856663,
-      'longitude': 2.351556,
-      'zoom': 10,
+      'latitude': 48.894734,
+      'longitude': 2.383949,
+      'zoom': 12,
     },
     'isFavorite': true,
     'isPremium': false,

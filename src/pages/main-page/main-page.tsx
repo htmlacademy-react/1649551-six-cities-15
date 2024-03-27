@@ -76,7 +76,7 @@ function MainPage(): JSX.Element {
                 </ul>
               </form>
               <CardsList
-                offers={offers}
+                offers={currentOffers}
                 handleHover={handleHover}
                 block='cities'
               />
@@ -84,8 +84,8 @@ function MainPage(): JSX.Element {
             <div className="cities__right-section">
               <Map
                 activeOffer={activeOffer}
-                city={offers[0].city}
-                offers={offers}
+                city={currentOffers[0].city}
+                offers={currentOffers}
                 className='cities__map'
               />
             </div>
