@@ -10,6 +10,7 @@ import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import { offersActions } from '../../store/slices/offers';
 import { CITIES } from '../../consts/consts';
+import { selectCity, selectOffers } from '../../store/selectors/offers';
 
 type MainPage = {
  offers: OfferType[];
@@ -17,8 +18,8 @@ type MainPage = {
 
 function MainPage(): JSX.Element {
 
-  const offers = useAppSelector((state) => state.offers);
-  const currentCity = useAppSelector((state) => state.city);
+  const offers = useAppSelector(selectOffers);
+  const currentCity = useAppSelector(selectCity);
   const currentOffers = offers.filter((offer) => offer.city.name === currentCity);
   const isEmpty = currentOffers.length === 0;
 
