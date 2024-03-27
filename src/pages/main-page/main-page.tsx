@@ -8,7 +8,7 @@ import { Nullable } from 'vitest';
 import { useAppDispatch, useAppSelector } from '../../hooks/store';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
-import { setCity } from '../../store/reducer';
+import { offersActions } from '../../store/slices/offers';
 import { CITIES } from '../../consts/consts';
 
 type MainPage = {
@@ -48,7 +48,7 @@ function MainPage(): JSX.Element {
                     className={classNames('locations__item-link', 'tabs__item',{'tabs__item--active': currentCity === city.name })}
                     onClick={(evt) => {
                       evt.preventDefault();
-                      dispatch(setCity(city.name));
+                      dispatch(offersActions.setCity(city.name));
                     }}
                   >
                     <span>{city.name}</span>
