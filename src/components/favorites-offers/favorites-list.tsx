@@ -1,12 +1,10 @@
-import { OfferType } from '../../types/types';
 import FavoriteItem from './favorites-item';
 import FavoriteEmpty from './favorite-empty';
+import { useAppSelector } from '../../hooks/store';
+import { selectOffers } from '../../store/selectors/offers';
 
-type FavoritesListProps = {
-  offers: OfferType[];
-}
-
-function FavoritesList({offers}: FavoritesListProps): JSX.Element {
+function FavoritesList(): JSX.Element {
+  const offers = useAppSelector(selectOffers);
   const favoriteOffers = offers.filter((offer) => offer.isFavorite);
   const cities = Array.from(new Set(favoriteOffers.map((offer) => offer.city.name)));
 

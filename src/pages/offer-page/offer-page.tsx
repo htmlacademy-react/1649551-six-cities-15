@@ -1,7 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import Header from '../../components/header/header';
 import InsideItemList from '../../components/inside-items/inside-item-list';
-import { OfferType } from '../../types/types';
 import { useParams } from 'react-router-dom';
 import { AuthorizationStatus } from '../../consts/consts';
 import Map from '../../components/map/map';
@@ -9,14 +8,16 @@ import NotFoundPage from '../not-found-page/not-found-page';
 import ReviewsComponent from '../../components/reviews/reviews-component';
 import CurrentOfferImagesList from '../../components/current-offer-gallery/current-offer-images-list';
 import CardsList from '../../components/cards-list/cards-list';
+import { useAppSelector } from '../../hooks/store';
+import { selectOffers } from '../../store/selectors/offers';
 
 type OfferPageProps = {
-  offers: OfferType[];
   authorizationStatus: AuthorizationStatus;
 }
 
-function OfferPage({offers, authorizationStatus}: OfferPageProps): JSX.Element {
+function OfferPage({authorizationStatus}: OfferPageProps): JSX.Element {
   const { offerId } = useParams();
+  const offers = useAppSelector(selectOffers);
   const currentOffer = offers.find((item) => item.id === offerId);
 
   if(!currentOffer){

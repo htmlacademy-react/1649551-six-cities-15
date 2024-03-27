@@ -12,10 +12,6 @@ import { offersActions } from '../../store/slices/offers';
 import { CITIES } from '../../consts/consts';
 import { selectCity, selectOffers } from '../../store/selectors/offers';
 
-type MainPage = {
- offers: OfferType[];
-}
-
 function MainPage(): JSX.Element {
 
   const offers = useAppSelector(selectOffers);
