@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet-async';
 import { OfferType } from '../../types/types';
 import { useState } from 'react';
 import { Nullable } from 'vitest';
-import { useAppDispatch, useAppSelector } from '../../hooks/store';
+import { useActionCreators, useAppSelector } from '../../hooks/store';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import { offersActions } from '../../store/slices/offers';
@@ -16,10 +16,10 @@ function MainPage(): JSX.Element {
 
   const offers = useAppSelector(selectOffers);
   const currentCity = useAppSelector(selectCity);
+
+  const {setCity} = useActionCreators(offersActions);
   const currentOffers = offers.filter((offer) => offer.city.name === currentCity);
   const isEmpty = currentOffers.length === 0;
-
-  const dispatch = useAppDispatch();
 
   const [activeOffer, setActiveOffer] = useState<Nullable<OfferType>>(null);
 
@@ -45,7 +45,7 @@ function MainPage(): JSX.Element {
                     className={classNames('locations__item-link', 'tabs__item',{'tabs__item--active': currentCity === city.name })}
                     onClick={(evt) => {
                       evt.preventDefault();
-                      dispatch(offersActions.setCity(city.name));
+                      setCity(city.name);
                     }}
                   >
                     <span>{city.name}</span>
