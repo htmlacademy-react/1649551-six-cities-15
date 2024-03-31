@@ -4,6 +4,7 @@ import { offers } from '../../mocks/cards/cards-mocks';
 import { OfferType } from '../../types/types';
 
 interface OffersState {
+  activeId?: OfferType['id'];
   city: CityName;
   offers: OfferType[];
 }
@@ -20,7 +21,7 @@ const offersSlice = createSlice({
     setCity: (state, action: PayloadAction<CityName>) => {
       state.city = action.payload;
     },
-  },
+  }
 });
 
 const offersActions = offersSlice.actions;

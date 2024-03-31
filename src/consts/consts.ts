@@ -69,3 +69,17 @@ export const raitings = [
 export const URL_MARKER_DEFAULT = './icons/marker-default.svg';
 
 export const URL_MARKER_ACTIVE = './icons/marker-active.svg';
+
+export const SORT_OPTIONS = [
+  'Popular',
+  'Price: low to high',
+  'Price: high to low',
+  'Top rated first'
+] satisfies Record<SortOption, string>;
+
+export const enum SortOption {
+  Popular,
+  PriceLowToHigh,
+  PriceHighToLow,
+  TopRatedFirst
+}
